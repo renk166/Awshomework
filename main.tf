@@ -1,5 +1,13 @@
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+}
 provider "aws" {
-  region = "eu-west-1"  
+  region = "eu-west-1"
 }
 
 resource "aws_instance" "AppServer" {
@@ -18,6 +26,7 @@ resource "aws_security_group" "AppServerSG" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+
 
   tags = {
     Name = "AppServer"
