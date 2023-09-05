@@ -11,7 +11,6 @@ provider "aws" {
 }
 
 resource "aws_instance" "AppServer" {
-  tags          = "test"
   ami           = "ami-0ab14756db2442499"  
   instance_type = "t2.micro"               
   key_name      = "key"     
