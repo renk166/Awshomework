@@ -29,6 +29,6 @@ resource "aws_security_group" "AppServerSG" {
 
 
   tags = {
-    Name = "AppServer"
+    Name = "AppServer1"
   }
 }
