@@ -15,7 +15,11 @@ resource "aws_instance" "AppServer" {
   instance_type = "t2.micro"               
   key_name      = "key"     
   user_data = file("script.sh")
+  tags = {
+    Name = "AppServer1"
+  }
 }
+
 
 resource "aws_security_group" "AppServerSG" {
   name_prefix = "AppServerSG-"
@@ -27,8 +31,4 @@ resource "aws_security_group" "AppServerSG" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 
-
-  tags = {
-    Name = "AppServer1"
-  }
 }
